@@ -6,7 +6,7 @@
 Summary:	Mod_vhost_mysql is a DSO module for the apache web server
 Name:		apache-%{mod_name}
 Version:	0.10
-Release:	%mkrel 3
+Release:	%mkrel 4
 Group:		System/Servers
 License:	GPL
 URL:		http://fabienne.tc2.utelisys.net/~skinkie/mod_vhost_mysql2/
@@ -20,7 +20,7 @@ Requires:	apache-conf >= 2.2.0
 Requires:	apache >= 2.2.0
 BuildRequires:	apache-devel >= 2.2.0
 BuildRequires:	file
-BuildRequires:	MySQL-devel
+BuildRequires:	mysql-devel
 BuildRequires:	openssl-devel
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
