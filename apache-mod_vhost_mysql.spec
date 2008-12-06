@@ -6,7 +6,7 @@
 Summary:	DSO module for the apache web server
 Name:		apache-%{mod_name}
 Version:	0.10
-Release:	%mkrel 8
+Release:	%mkrel 9
 Group:		System/Servers
 License:	GPL
 URL:		http://fabienne.tc2.utelisys.net/~skinkie/mod_vhost_mysql2/
