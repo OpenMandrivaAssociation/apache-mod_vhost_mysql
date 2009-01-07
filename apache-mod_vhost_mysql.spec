@@ -6,7 +6,7 @@
 Summary:	DSO module for the apache web server
 Name:		apache-%{mod_name}
 Version:	0.10
-Release:	%mkrel 9
+Release:	%mkrel 10
 Group:		System/Servers
 License:	GPL
 URL:		http://fabienne.tc2.utelisys.net/~skinkie/mod_vhost_mysql2/
@@ -37,7 +37,7 @@ find . -type f|xargs file|grep 'CRLF'|cut -d: -f1|xargs perl -p -i -e 's/\r//'
 find . -type f|xargs file|grep 'text'|cut -d: -f1|xargs perl -p -i -e 's/\r//'
 
 %build
-%{_sbindir}/apxs `mysql_config --include` `mysql_config --libs` -c %{mod_name}.c
+%{_sbindir}/apxs `mysql_config --include` -lmysqlclient -c %{mod_name}.c
 
 %install
 [ "%{buildroot}" != "/" ] && rm -rf %{buildroot}
