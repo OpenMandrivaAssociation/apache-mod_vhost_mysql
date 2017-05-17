@@ -6,7 +6,7 @@
 Summary:	DSO module for the apache web server
 Name:		apache-%{mod_name}
 Version:	0.10
-Release:	21
+Release:	22
 Group:		System/Servers
 License:	GPL
 URL:		http://fabienne.tc2.utelisys.net/~skinkie/mod_vhost_mysql2/
@@ -20,7 +20,7 @@ Requires:	apache-conf >= 2.2.0
 Requires:	apache >= 2.2.0
 BuildRequires:	apache-devel >= 2.2.0
 BuildRequires:	file
-BuildRequires:	mysql-devel
+BuildRequires:	mariadb-devel
 BuildRequires:	openssl-devel
 
 %description
@@ -47,15 +47,11 @@ install -m0755 .libs/*.so %{buildroot}%{_libdir}/apache-extramodules/
 bzcat %{SOURCE1} > %{buildroot}%{_sysconfdir}/httpd/modules.d/%{mod_conf}
 
 %post
-if [ -f %{_var}/lock/subsys/httpd ]; then
- %{_initrddir}/httpd restart 1>&2;
-fi
+/bin/systemctl daemon-reload >/dev/null 2>&1 || :
 
 %postun
 if [ "$1" = "0" ]; then
- if [ -f %{_var}/lock/subsys/httpd ]; then
-	%{_initrddir}/httpd restart 1>&2
- fi
+    /bin/systemctl daemon-reload >/dev/null 2>&1 || :
 fi
 
 %clean
