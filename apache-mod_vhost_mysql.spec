@@ -9,7 +9,7 @@ Version:	0.10
 Release:	22
 Group:		System/Servers
 License:	GPL
-URL:		http://fabienne.tc2.utelisys.net/~skinkie/mod_vhost_mysql2/
+URL:		https://fabienne.tc2.utelisys.net/~skinkie/mod_vhost_mysql2/
 Source0:	http://fabienne.tc2.utelisys.net/~skinkie/mod_vhost_mysql2/mod_vhost_mysql2-0.10.tar.bz2
 Source1:	%{mod_conf}.bz2
 Requires(pre): rpm-helper
